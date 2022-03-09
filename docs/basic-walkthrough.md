@@ -30,9 +30,9 @@ This walk-through will illustrate the ease of building, publishing and consuming
 
 ## Building a RHEL for Edge Image
 
-The process of building a RHEL for edge image involves composing a Blueprint containing a list of packages, entry modules for packages, as well as any customizations to the resulting image. The architecture includes a Tekton pipeline with the purpose of building an RHEL for Edge image from an existing blueprint. Sample blueprints are found on the [blueprints](https://github.com/redhat-cop/rhel-edge-automation-arch/tree/blueprints) branch of this repository.
+The process of building a RHEL for edge image involves composing a Blueprint containing a list of packages, entry modules for packages, as well as any customizations to the resulting image. The architecture includes a Tekton pipeline with the purpose of building an RHEL for Edge image from an existing blueprint. Sample blueprints are found on the [blueprints](https://github.com/luisarizmendi/rhel-edge-automation-arch/tree/blueprints) branch of this repository.
 
-For the most basic configurations, a sample [hello-world](https://github.com/redhat-cop/rhel-edge-automation-arch/tree/blueprints/hello-world) blueprint is available and provides the necessary configuration to run the containerized application.
+For the most basic configurations, a sample [hello-world](https://github.com/luisarizmendi/rhel-edge-automation-arch/tree/blueprints/hello-world) blueprint is available and provides the necessary configuration to run the containerized application.
 
 All of the content for managing RHEL for Edge applications are located in the `rfe` namespace within the OpenShift cluster.
 
@@ -59,7 +59,7 @@ To break down the preceding command:
 * `tkn` - Tekton CLI
 * `pipeline` - Resource to manage.
 * `start` - Action to perform. Starts a pipeline run.
-* `--workspace name=shared-workspace,volumeClaimTemplateFile=examples/pipelines/volumeclaimtemplate.yaml` - Specifies that a PersistentVolumeClaim should be used to back the Tekton workspace using a template found in the file [examples/pipelines/volumeclaimtemplate.yaml](https://github.com/redhat-cop/rhel-edge-automation-arch/blob/main/examples/pipelines/volumeclaimtemplate.yaml).
+* `--workspace name=shared-workspace,volumeClaimTemplateFile=examples/pipelines/volumeclaimtemplate.yaml` - Specifies that a PersistentVolumeClaim should be used to back the Tekton workspace using a template found in the file [examples/pipelines/volumeclaimtemplate.yaml](https://github.com/luisarizmendi/rhel-edge-automation-arch/blob/main/examples/pipelines/volumeclaimtemplate.yaml).
 * `-s rfe-automation` - The name of the Service Account used to run the pipeline.
 * `--use-param-default` - The default Pipeline parameters will be applied unless explicitly specified.
 * `-p blueprint-dir=hello-world` - The directory containing the blueprint file in the cloned repository. By default, the _blueprints_ branch of this repository will be used.

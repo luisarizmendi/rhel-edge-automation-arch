@@ -48,7 +48,7 @@ Before beginning, make sure you have the latest versions of `oc`/`kubectl`, `git
 First clone the repository by running the following command:
 
 ```shell
-git clone https://github.com/redhat-cop/rhel-edge-automation-arch.git
+git clone https://github.com/luisarizmendi/rhel-edge-automation-arch.git
 ```
 
 #### Prepare Values File & SSH Keypair
@@ -125,7 +125,7 @@ rfe-automation   Synced        Healthy
 
 ### Customizing the Deployment
 
-Helm and Argo CD are used to deploy and manage all of the project components. From a high level, a Helm chart called [application-manager](https://github.com/redhat-cop/rhel-edge-automation-arch/main/helm-migration/charts/application-manager) is used to dynamically build a nested app of apps pattern in Argo CD. Each application in Argo CD is a pointer to a Helm chart that installs and configures a specific project component. When bootstrapping the deployment, a Helm values file is used to tell the application manager which components should be deployed and how they should be configured. Using this pattern gives us a significant amount of flexibility when tailoring deployments to specific environments.
+Helm and Argo CD are used to deploy and manage all of the project components. From a high level, a Helm chart called [application-manager](https://github.com/luisarizmendi/rhel-edge-automation-arch/main/helm-migration/charts/application-manager) is used to dynamically build a nested app of apps pattern in Argo CD. Each application in Argo CD is a pointer to a Helm chart that installs and configures a specific project component. When bootstrapping the deployment, a Helm values file is used to tell the application manager which components should be deployed and how they should be configured. Using this pattern gives us a significant amount of flexibility when tailoring deployments to specific environments.
 
 #### Disabling Components
 
